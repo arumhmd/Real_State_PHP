@@ -1,34 +1,48 @@
-<?php 
+<?php
 session_start();
 include("config.php");
-$error="";
-$msg="";
-if(isset($_REQUEST['login']))
-{
-	$email=$_REQUEST['email'];
-	$pass=$_REQUEST['pass'];
-	$pass= sha1($pass);
-	
-	if(!empty($email) && !empty($pass))
-	{
-		$sql = "SELECT * FROM user where uemail='$email' && upass='$pass'";
-		$result=mysqli_query($con, $sql);
-		$row=mysqli_fetch_array($result);
-		   if($row){
-			   
-				$_SESSION['uid']=$row['uid'];
-				$_SESSION['uemail']=$email;
-				header("location:index.php");
-				
-		   }
-		   else{
-			   $error = "<p class='alert alert-warning'>Email or Password doesnot match!</p> ";
-		   }
-	}else{
-		$error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
-	}
+$error = "";
+$msg = "";
+
+if (isset($_REQUEST['login'])) {
+    $email = $_REQUEST['email'];
+    $pass = $_REQUEST['pass'];
+    $pass = sha1($pass);
+
+    if (!empty($email) && !empty($pass)) {
+        // Check if the user is an agent in the agent_requests table
+        $agentRequestQuery = "SELECT * FROM agent_requests WHERE uemail='$email' AND upass='$pass' AND status='approved'";
+        $agentRequestResult = mysqli_query($con, $agentRequestQuery);
+        $agentRequestRow = mysqli_fetch_array($agentRequestResult);
+
+        if ($agentRequestRow) {
+            // Agent is approved, proceed with login
+            $_SESSION['uid'] = $agentRequestRow['uid']; // Assuming 'uid' is the primary key in the agent_requests table
+            $_SESSION['uemail'] = $email;
+            header("location:index.php");
+        } else {
+            // Check if the user is a regular user in the user table
+            $userQuery = "SELECT * FROM user WHERE uemail='$email' AND upass='$pass'";
+            $userResult = mysqli_query($con, $userQuery);
+            $userRow = mysqli_fetch_array($userResult);
+
+            if ($userRow) {
+                // Regular user login
+                $_SESSION['uid'] = $userRow['uid'];
+                $_SESSION['uemail'] = $email;
+                header("location:index.php");
+            } else {
+                $error = "<p class='alert alert-warning'>Email or Password does not match!</p>";
+            }
+        }
+    } else {
+        $error = "<p class='alert alert-warning'>Please fill in all the fields</p>";
+    }
 }
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,53 +73,17 @@ if(isset($_REQUEST['login']))
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
-<!-- FOR MORE PROJECTS visit: codeastro.com -->
 <!--	Title
 	=========================================================-->
 <title>Real Estate PHP</title>
 </head>
 <body>
-
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
---> 
-
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
 		<?php include("include/header.php");?>
         <!--	Header end  -->
-        
-        <!--	Banner   --->
-        <!-- <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Login</b></h2>
-                    </div>
-                    <div class="col-md-6">
-                        <nav aria-label="breadcrumb" class="float-left float-md-right">
-                            <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Login</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-         <!--	Banner   --->
-		 
-		 
-		 
+
         <div class="page-wrappers login-body full-row bg-gray">
             <div class="login-wrapper">
             	<div class="container">
@@ -132,16 +110,6 @@ if(isset($_REQUEST['login']))
 									<span class="or-line"></span>
 									<span class="span-or">or</span>
 								</div>
-								<!-- FOR MORE PROJECTS visit: codeastro.com -->
-								<!-- Social Login -->
-								<!-- <div class="social-login">
-									<span>Login with</span>
-									<a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-									<a href="#" class="google"><i class="fab fa-google"></i></a>
-									<a href="#" class="facebook"><i class="fab fa-twitter"></i></a>
-									<a href="#" class="google"><i class="fab fa-instagram"></i></a>
-								</div> -->
-								<!-- /Social Login -->
 								
 								<div class="text-center dont-have">Don't have an account? <a href="register.php">Register</a></div>
 								
@@ -151,10 +119,8 @@ if(isset($_REQUEST['login']))
                 </div>
             </div>
         </div>
-	<!--	login  -->
-        
-        
-        <!--	Footer   start--><!-- FOR MORE PROJECTS visit: codeastro.com -->
+	<!--	login  -->       
+        <!--	Footer   start--
 		<?php include("include/footer.php");?>
 		<!--	Footer   start-->
         

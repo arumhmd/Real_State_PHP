@@ -2967,4 +2967,8 @@ form.subscribe {
 .comming-soon .bg-shape {
 	display: none
 }
+.left-aligned-paragraph {
+    text-align: left;
+}
+
 }

@@ -126,10 +126,10 @@ if(!isset($_SESSION['auser']))
 														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Mobile</p>
 														<p class="col-sm-9"><?php echo $row['5']; ?></p>
 													</div>
-													<div class="row">
+													<!-- <div class="row">
 														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Address</p>
 														<p class="col-sm-9"><?php echo $row['6']; ?></p>
-													</div>
+													</div> -->
 												</div>
 											</div>
 										</div>
@@ -149,7 +149,7 @@ if(!isset($_SESSION['auser']))
 											<!-- /Account Status -->
 
 											<!-- Skills -->
-											<div class="card">
+											<!-- <div class="card">
 												<div class="card-body">
 													<h5 class="card-title d-flex justify-content-between">
 														<span>Skills </span> 
@@ -166,7 +166,7 @@ if(!isset($_SESSION['auser']))
 														<span>ASP</span>
 													</div>
 												</div>
-											</div>
+											</div> -->
 											<!-- /Skills -->
 
 										</div>

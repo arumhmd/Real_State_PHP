@@ -52,11 +52,11 @@ if(!isset($_SESSION['auser']))
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
-                <div class="content container-fluid">
+            <!-- <div class="page-wrapper">
+                <div class="content container-fluid"> -->
 
 					<!-- Page Header -->
-					<div class="page-header">
+					<!-- <div class="page-header">
 						<div class="row">
 							<div class="col">
 								<h3 class="page-title">Builder</h3>
@@ -66,7 +66,7 @@ if(!isset($_SESSION['auser']))
 								</ul>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- /Page Header -->
 					
 					<div class="row">

@@ -67,10 +67,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`aid`, `auser`, `aemail`, `apass`, `adob`, `aphone`) VALUES
 (2, 'disha', 'disha@gmail.com', 'disha', '1999-02-02', '9689689698'),
-(6, 'final', 'final@gmail.com', 'final', '2020-04-29', '7979656578'),
-(7, 'test', 'test@gmail.com', 'test', '2020-04-29', '8997979765'),
-(8, 'check', 'check@gmail.com', 'check', '2020-04-29', '8979785688'),
-(9, 'admin', 'admin@gmail.com', 'admin', '1999-12-06', '9878786545');
+
 
 -- --------------------------------------------------------
 
@@ -91,7 +88,6 @@ CREATE TABLE `city` (
 
 INSERT INTO `city` (`cid`, `cname`, `sid`) VALUES
 (9, 'navi mumbai', 3),
-(10, 'vapi', 2),
 (11, 'valsad', 2);
 
 -- --------------------------------------------------------

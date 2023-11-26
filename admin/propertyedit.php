@@ -18,7 +18,7 @@ if(isset($_POST['add']))
 	
 	$title=$_POST['title'];
 	$content=$_POST['content'];
-	$ptype=$_POST['ptype'];
+	$type=$_POST['type'];
 	$bhk=$_POST['bhk'];
 	$bed=$_POST['bed'];
 	$balc=$_POST['balc'];
@@ -69,7 +69,7 @@ if(isset($_POST['add']))
 	move_uploaded_file($temp_name7,"property/$fimage2");
 	
 	
-	$sql = "UPDATE property SET title= '{$title}', pcontent= '{$content}', ptype='{$ptype}', bhk='{$bhk}', stype='{$stype}',
+	$sql = "UPDATE property SET title= '{$title}', pcontent= '{$content}', type='{$type}', bhk='{$bhk}', stype='{$stype}',
 	bedroom='{$bed}', bathroom='{$bath}', balcony='{$balc}', kitchen='{$kitc}', hall='{$hall}', floor='{$floor}', 
 	size='{$asize}', price='{$price}', location='{$loc}', city='{$city}', state='{$state}', feature='{$feature}',
 	pimage='{$aimage}', pimage1='{$aimage1}', pimage2='{$aimage2}', pimage3='{$aimage3}', pimage4='{$aimage4}',
@@ -180,7 +180,7 @@ if(isset($_POST['add']))
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Property Type</label>
 													<div class="col-lg-9">
-														<select class="form-control" required name="ptype">
+														<select class="form-control" required name="type">
 														<option value="">Select Type</option>
 														<option value="house">House</option>
 														<option value="Land">Land</option>

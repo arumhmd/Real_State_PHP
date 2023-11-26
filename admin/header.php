@@ -87,10 +87,10 @@ if(!isset($_SESSION['auser']))
 							</li>
 						
 							<li class="submenu">
-								<a href="#"><i class="fe fe-user"></i> <span> Authentication </span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fe fe-user"></i> <span> Agent </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="index.php"> Login </a></li>
-									<li><a href="register.php"> Register </a></li>
+									<!-- <li><a href="index.php"> Login </a></li> -->
+									<li><a href="request.php"> Add Agent </a></li>
 									
 								</ul>
 							</li>
@@ -104,7 +104,7 @@ if(!isset($_SESSION['auser']))
 									<li><a href="adminlist.php"> Admin </a></li>
 									<li><a href="userlist.php"> Users </a></li>
 									<li><a href="useragent.php"> Agent </a></li>
-									<li><a href="userbuilder.php"> Builder </a></li>
+									<!-- <li><a href="userbuilder.php"> Builder </a></li> -->
 								</ul>
 							</li>
 						

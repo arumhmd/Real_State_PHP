@@ -1,32 +1,36 @@
 <?php 
-	session_start();
-	include("config.php");
-	$error="";
-	if(isset($_POST['login']))
+include("config.php");
+$error="";
+$msg="";
+if(isset($_REQUEST['insert']))
+{
+	$name=$_REQUEST['name'];
+	$email=$_REQUEST['email'];
+	$pass=$_REQUEST['pass'];
+	$dob=$_REQUEST['dob'];
+	$phone=$_REQUEST['phone'];
+	
+	if(!empty($name) && !empty($email) && !empty($pass)  && !empty($dob) && !empty($phone))
 	{
-		$user=$_REQUEST['user'];
-		$pass=$_REQUEST['pass'];
-		
-		if(!empty($user) && !empty($pass))
-		{
-			$query = "SELECT auser, apass FROM admin WHERE auser='$user' AND apass='$pass'";
-			$result = mysqli_query($con,$query)or die(mysqli_error($con));
-			$num_row = mysqli_num_rows($result);
-			$row=mysqli_fetch_array($result);
-			if( $num_row ==1 )
+		$sql="insert into admin (auser,aemail,apass,adob,aphone) values('$name','$email','$pass','$dob','$phone')";
+		$result=mysqli_query($con,$sql);
+		if($result)
 			{
-				$_SESSION['auser']=$user;
-				header("Location: dashboard.php");
+				$msg='Admin Register Successfully';
+				
+						
 			}
 			else
 			{
-				$error='* Invalid User Name and Password';
+				$error='* Not Register Admin Try Again';
 			}
-		}else{
-			$error="* Please Fill all the Fileds!";
-		}
-		
-	}   
+	}
+	else{
+		$error="* Please Fill all the Fields!";
+	}
+	
+	
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +38,7 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Admin - Login</title>
+        <title>Ventura - Register</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -52,7 +56,6 @@
 			<script src="assets/js/html5shiv.min.js"></script>
 			<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
-		
     </head>
     <body>
 	
@@ -61,23 +64,35 @@
             <div class="login-wrapper">
             	<div class="container">
                 	<div class="loginbox">
+                    	
                         <div class="login-right">
 							<div class="login-right-wrap">
-								<h1>Login</h1>
+								<h1>Register</h1>
 								<p class="account-subtitle">Access to our dashboard</p>
 								<p style="color:red;"><?php echo $error; ?></p>
+								<p style="color:green;"><?php echo $msg; ?></p>
 								<!-- Form -->
 								<form method="post">
 									<div class="form-group">
-										<input class="form-control" name="user" type="text" placeholder="User Name">
+										<input class="form-control" type="text" placeholder="Name" name="name">
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="password" name="pass" placeholder="Password">
+										<input class="form-control" type="email" placeholder="Email" name="email">
 									</div>
 									<div class="form-group">
-										<button class="btn btn-primary btn-block" name="login" type="submit">Login</button>
+										<input class="form-control" type="text" placeholder="Password" name="pass">
+									</div>
+									<div class="form-group">
+										<input class="form-control" type="date" placeholder="Date of Birth" name="dob">
+									</div>
+									<div class="form-group">
+										<input class="form-control" type="text" placeholder="Phone" name="phone" maxlength="10">
+									</div>
+									<div class="form-group mb-0">
+										<input class="btn btn-primary btn-block" type="submit" name="insert" Value="Register">
 									</div>
 								</form>
+								<!-- /Form -->
 								
 								<div class="login-or">
 									<span class="or-line"></span>
@@ -85,17 +100,16 @@
 								</div>
 								
 								<!-- Social Login -->
-								<!-- <div class="social-login">
-									<span>Login with</span>
-									<a href="facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
+								<div class="social-login">
+									<span>Register with</span>
+									<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
 									<a href="#" class="google"><i class="fa fa-google"></i></a>
 									<a href="#" class="facebook"><i class="fa fa-twitter"></i></a>
 									<a href="#" class="google"><i class="fa fa-instagram"></i></a>
-								</div> -->
+								</div>
 								<!-- /Social Login -->
 								
-								<div class="text-center dont-have">Don't have an account? <a href="register.php">Register</a></div>
-								
+								<div class="text-center dont-have">Already have an account? <a href="index.php">Login</a></div>
 							</div>
                         </div>
                     </div>
@@ -106,6 +120,7 @@
 		
 		<!-- jQuery -->
         <script src="assets/js/jquery-3.2.1.min.js"></script>
+		
 		<!-- Bootstrap Core JS -->
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>

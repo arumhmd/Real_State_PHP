@@ -3,6 +3,13 @@ ini_set('session.cache_limiter','public');
 session_cache_limiter(false);
 session_start();
 include("config.php");
+
+if (!isset($_SESSION['uemail'])) {
+    // Redirect to the login page or show a message
+    header("Location: login.php");
+    exit(); // Make sure to exit after redirection
+}
+
 								
 ?>
 <!DOCTYPE html>
@@ -43,19 +50,6 @@ include("config.php");
 <title>Property Detail</title>
 </head>
 <body>
-
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
---> 
-
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
@@ -185,7 +179,7 @@ include("config.php");
                             <h5 class="mt-5 mb-4 text-secondary double-down-line-left position-relative">Contact Agent</h5>
                             <div class="agent-contact pt-60">
                                 <div class="row">
-                                    <div class="col-sm-4 col-lg-3"> <img src="admin/user/<?php echo $row['uimage']; ?>" alt="" height="200" width="170"> </div>
+                                    <div class="col-sm-4 col-lg-3"> <img src="admin/user/<?php echo $row['uimage']; ?>" alt="" height="150" width="200"> </div>
                                     <div class="col-sm-8 col-lg-9">
                                         <div class="agent-data text-ordinary mt-sm-20">
                                             <h6 class="text-primary text-capitalize"><?php echo $row['uname'];?></h6>
@@ -226,7 +220,7 @@ include("config.php");
                                                     <div class="row">
                                                         <div class="col-md-12 col-lg-12">
                                                             <div class="form-group">
-                                                                <textarea class="form-control bg-gray mt-sm-20" id="massage" name="massage" cols="30" rows="7" placeholder="Massage"></textarea>
+                                                                <textarea class="form-control bg-gray mt-sm-20" id="massage" name="massage" cols="30" rows="5" placeholder="Message"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -298,7 +292,7 @@ include("config.php");
                             </div>
                             <button type="submit" value="submit" name="calc" class="btn btn-primary mt-4">Calclute Instalment</button>
                         </form>
-                        <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-5">Featured Property</h4>
+                        <!-- <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-5">Featured Property</h4> -->
 
                         <div class="sidebar-widget mt-5">
                             <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Recent Property Add</h4>

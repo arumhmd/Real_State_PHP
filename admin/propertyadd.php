@@ -17,7 +17,7 @@ if(isset($_POST['add']))
 	
 	$title=$_POST['title'];
 	$content=$_POST['content'];
-	$ptype=$_POST['ptype'];
+	$type=$_POST['type'];
 	$bhk=$_POST['bhk'];
 	$bed=$_POST['bed'];
 	$balc=$_POST['balc'];
@@ -66,8 +66,8 @@ if(isset($_POST['add']))
 	move_uploaded_file($temp_name6,"property/$fimage1");
 	move_uploaded_file($temp_name7,"property/$fimage2");
 	
-	$sql="insert into property (title,pcontent,ptype,bhk,stype,bedroom,bathroom,balcony,kitchen,hall,floor,size,price,location,city,state,feature,pimage,pimage1,pimage2,pimage3,pimage4,uid,status,mapimage,topmapimage,groundmapimage)
-	values('$title','$content','$ptype','$bhk','$stype','$bed','$bath','$balc','$kitc','$hall','$floor','$asize','$price',
+	$sql="insert into property (title,pcontent,type,bhk,stype,bedroom,bathroom,balcony,kitchen,hall,floor,size,price,location,city,state,feature,pimage,pimage1,pimage2,pimage3,pimage4,uid,status,mapimage,topmapimage,groundmapimage)
+	values('$title','$content','$type','$bhk','$stype','$bed','$bath','$balc','$kitc','$hall','$floor','$asize','$price',
 	'$loc','$city','$state','$feature','$aimage','$aimage1','$aimage2','$aimage3','$aimage4','$uid','$status','$fimage','$fimage1','$fimage2')";
 	$result=mysqli_query($con,$sql);
 	if($result)
@@ -165,7 +165,7 @@ if(isset($_POST['add']))
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Property Type</label>
 													<div class="col-lg-9">
-														<select class="form-control" required name="ptype">
+														<select class="form-control" required name="type">
 															<option value="">Select Type</option>
 															<option value="house">House</option>
 															<option value="Land">Land</option>

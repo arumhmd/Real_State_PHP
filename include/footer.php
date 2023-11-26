@@ -1,14 +1,13 @@
-<footer class="full-row bg-secondary p-0">
+<footer class="full-row bg-secondary p-0"  style="min-height: 200px;">
             <div class="container">
                 <div  class="row">
                     <div class="col-lg-12">
                         <div class="divider py-40">
                             <div class="row">
-                                <div class="col-md-12 col-lg-4">
+                                <div class="col-md-12 col-lg-3">
                                     <div class="footer-widget mb-4">
-                                        <div class="footer-logo mb-4"> <a href="#"><img class="logo-bottom" src="images/logo/restatelg_white.png" alt="image"></a> </div>
-                                        <p class="pb-20 text-white">Risus commodo congue augue phasellus morbi hymenaeos ante tincidunt eu orci dictum bibendum lacus platea primis mi lacinia felis gravida natoque bibendum cubilia montes tristique et arcu blandit risus. Lobortis dignissim nam.</p>
-										
+                                        <div class="footer-logo mb-4"> <a href="#"><img class="logo-bottom" src="images/logo/logo-white.png" alt="image"></a> </div>
+                                        <p class="pb-20 text-white">Real</p>
                                         </div>
                                 </div>
                                 <div class="col-md-12 col-lg-8">
@@ -17,8 +16,7 @@
                                             <div class="footer-widget footer-nav mb-4">
                                                 <h4 class="widget-title text-white double-down-line-left position-relative">Support</h4>
                                                 <ul class="hover-text-primary">
-                                                    <li><a href="#" class="text-white">Forum</a></li>
-                                                    <li><a href="#" class="text-white">Terms and Condition</a></li>
+                                                    <li><a href="terms.php" class="text-white">Terms and Condition</a></li>
                                                     <li><a href="faq.php" class="text-white">Frequenlty Asked Question</a></li>
                                                     <li><a href="contact.php" class="text-white">Contact</a></li>
                                                 </ul>
@@ -53,13 +51,13 @@
                 </div>
                 <div class="row copyright">
                     <div class="col-sm-6"> <span class="text-white">© <?php echo date('Y');?> Real Estate Website - Developed By MHM.ARHAM</span> </div>
-                    <div class="col-sm-6">
+                    <!-- <div class="col-sm-6">
                         <ul class="line-menu text-white hover-text-primary float-right">
                             <li><a href="#">Privacy & Policy</a></li>
                             <li>|</li>
-                            <li><a href="https://www.google.com/maps/place/Eravur/@7.7726,81.6078489,18z/data=!4m6!3m5!1s0x3afad474cfc87353:0x9d3fd8ac4c081b6a!8m2!3d7.7768972!4d81.6042028!16s%2Fm%2F056nktj?entry=ttu" target="_blank"> Site Map</a></li>
+                            <li><a href="/sitemap.xml" target="_blank">Site Map</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
-        </footer>
+ </footer>

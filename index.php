@@ -25,6 +25,7 @@ include("config.php");
 
 <!--	Css Link
 	========================================================-->
+
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css">
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -40,17 +41,6 @@ include("config.php");
 <title>Home</title>
 </head>
 <body>
-
-<!--	Page Loader  -->
-<!--<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>  -->
-<!--	Page Loader  -->
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
@@ -69,7 +59,7 @@ include("config.php");
                                 <div class="row">
                                     <div class="col-md-6 col-lg-2">
                                         <div class="form-group">
-                                        <select class="form-control" required name="ptype">
+                                        <select class="form-control" required name="type">
 												<option value="">Select Type</option>
 												<option value="house">House</option>
 												<option value="Land">Land</option>
@@ -88,12 +78,18 @@ include("config.php");
                                     </div>
                                     <div class="col-md-8 col-lg-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="city" placeholder="Enter District or Enter City" required>
+                                        <select class="form-control" required name="city">
+                                                <option value="">Select City</option>
+												<option value="kattankudy">Kattankudy</option>
+												<option value="batticaloa">Batticaloa</option>
+                                                <option value="eravur">Eravur</option>
+												<option value="oddamavady">Oddamavady</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-2">
                                         <div class="form-group">
-                                            <button type="submit" name="filter" class="btn btn-primary w-100">Search Property</button>
+                                            <button type="submit" name="filter" class="btn btn-primary w-100" >Search Property</button>
                                         </div>
                                     </div>
                                 </div>
@@ -119,30 +115,30 @@ include("config.php");
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
 								<i class="flaticon-rent text-primary flat-medium" aria-hidden="true"></i>
                                 <h5 class="text-secondary hover-text-primary py-3 m-0">Selling Service</h5>
-                                <p>Our real estate system provides a dedicated selling service, assisting sellers in showcasing their properties effectively to potential buyers.
+                                <p class="text-left"> Our real estate system provides a dedicated selling service, assisting sellers in showcasing their properties effectively to potential buyers.
                                  Sellers can list their properties, upload images, provide descriptions, and set prices, reaching a broader audience through our user-friendly interface. Our system maximizes exposure, helping sellers sell their properties efficiently and at the right price.</p>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
-								<i class="flaticon-for-rent text-primary flat-medium" aria-hidden="true"></i>
+								<i class="align-center flaticon-for-rent text-primary flat-medium" aria-hidden="true"></i>
                                 <h5 class="text-secondary hover-text-primary py-3 m-0">Rental Service</h5>
-                                <p>For those seeking rental opportunities, our platform offers an extensive rental service. Prospective tenants can browse through available rental properties, filtering based on preferences such as location, budget, amenities, and more. Landlords can list their properties for rent, attracting suitable tenants and facilitating a hassle-free rental process.</p>
+                                <p class="text-left">For those seeking rental opportunities, our platform offers an extensive rental service. Prospective tenants can browse through available rental properties, filtering based on preferences such as location, budget, amenities, and more. Landlords can list their properties for rent, attracting suitable tenants and facilitating a hassle-free rental process.</p>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
 								<i class="flaticon-list text-primary flat-medium" aria-hidden="true"></i>
                                 <h5 class="text-secondary hover-text-primary py-3 m-0">Property Listing</h5>
-                                <p>Extensive database of properties available for sale or rent, categorized by location, type, size, and price range.</p>
-                                <p>Property descriptions, high-quality images, and virtual tours to provide a comprehensive view of the properties.</p>
+                                <p class="text-left">Extensive database of properties available for sale or rent, categorized by location, type, size, and price range.</p>
+                                <p class="text-left">Property descriptions, high-quality images, and virtual tours to provide a comprehensive view of the properties.</p>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
 								<i class="flaticon-diagram text-primary flat-medium" aria-hidden="true"></i>
                                 <h5 class="text-secondary hover-text-primary py-3 m-0">Legal Investment</h5>
-                                <p>Understanding the importance of legal compliance and investment security, our system offers a legal investment feature. Users can access information and resources related to legal aspects of real estate transactions, ensuring that investments are conducted within the bounds of the law. We prioritize transparency and legality, fostering a trustworthy and secure environment for real estate transactions.</p>
+                                <p class="text-left">Understanding the importance of legal compliance and investment security, our system offers a legal investment feature. Users can access information and resources related to legal aspects of real estate transactions, ensuring that investments are conducted within the bounds of the law. We prioritize transparency and legality, fostering a trustworthy and secure environment for real estate transactions.</p>
                             </div>
                         </div>
                     </div>
@@ -158,14 +154,7 @@ include("config.php");
                     <div class="col-md-12">
                         <h2 class="text-secondary double-down-line text-center mb-4">Recent Property</h2>
                     </div>
-                    <!--- <div class="col-md-6">
-                        <ul class="nav property-btn float-right" id="pills-tab" role="tablist">
-                            <li class="nav-item"> <a class="nav-link py-3 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">New</a> </li>
-                            <li class="nav-item"> <a class="nav-link py-3" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Featured</a> </li>
-                            <li class="nav-item"> <a class="nav-link py-3" id="pills-contact-tab2" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Top Sale</a> </li>
-                            <li class="nav-item"> <a class="nav-link py-3" id="pills-contact-tab3" data-toggle="pill" href="#pills-resturant" role="tab" aria-controls="pills-contact" aria-selected="false">Best Sale</a> </li>
-                        </ul>
-                    </div> --->
+                   
                     <div class="col-md-12">
                         <div class="tab-content mt-4" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home">
@@ -230,7 +219,7 @@ include("config.php");
 									<i class="flaticon-reward flat-medium float-left d-table mr-4 text-primary" aria-hidden="true"></i>
 									<div class="pl-2">
 										<h5 class="mb-3">Experience Quality</h5>
-										<p>With years of industry expertise, we bring a wealth of experience to every real estate transaction. Our seasoned professionals have a deep understanding of the market, ensuring you receive expert guidance every step of the way.</p>
+										<p class="left-aligned-paragraph">With years of industry expertise, we bring a wealth of experience to every real estate transaction. Our seasoned professionals have a deep understanding of the market, ensuring you receive expert guidance every step of the way.</p>
 									</div>
                                 </li>
                                 <li class="mb-4 text-white d-flex"> 
@@ -299,10 +288,10 @@ include("config.php");
             <div class="container">
                 <div class="fact-counter">
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="count wow text-center  mb-sm-50" data-wow-duration="300ms"> <i class="flaticon-house flat-large text-white" aria-hidden="true"></i>
-								<?php
-										$query=mysqli_query($con,"SELECT count(pid) FROM property");
+                    <div class="col-md-3">
+                            <div class="count wow text-center  mb-sm-50" data-wow-duration="300ms"> <i class="flaticon-man flat-large text-white" aria-hidden="true"></i>
+                                <?php
+										$query=mysqli_query($con,"SELECT count(uid) FROM user WHERE utype = 'agent'");
 											while($row=mysqli_fetch_array($query))
 												{
 										?>
@@ -310,7 +299,21 @@ include("config.php");
 												$total = $row[0];
 												echo $total;?>">0</div>
 								<?php } ?>
-                                <div class="text-white h5">Property Available</div>
+                                <div class="text-white h5">Registered Agents</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="count wow text-center  mb-sm-50" data-wow-duration="300ms"> <i class="flaticon-man flat-large text-white" aria-hidden="true"></i>
+                                <?php
+										$query=mysqli_query($con,"SELECT count(uid) FROM user WHERE utype = 'user'");
+											while($row=mysqli_fetch_array($query))
+												{
+										?>
+                                <div class="count-num text-primary my-4" data-speed="3000" data-stop="<?php 
+												$total = $row[0];
+												echo $total;?>">0</div>
+								<?php } ?>
+                                <div class="text-white h5">Registered Users</div>
                             </div>
                         </div>
 						<div class="col-md-3">
@@ -341,20 +344,7 @@ include("config.php");
                                 <div class="text-white h5">Rent Property Available</div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="count wow text-center  mb-sm-50" data-wow-duration="300ms"> <i class="flaticon-man flat-large text-white" aria-hidden="true"></i>
-                                <?php
-										$query=mysqli_query($con,"SELECT count(uid) FROM user");
-											while($row=mysqli_fetch_array($query))
-												{
-										?>
-                                <div class="count-num text-primary my-4" data-speed="3000" data-stop="<?php 
-												$total = $row[0];
-												echo $total;?>">0</div>
-								<?php } ?>
-                                <div class="text-white h5">Registered Users</div>
-                            </div>
-                        </div>
+                        
 
                     </div>
                 </div>
@@ -378,7 +368,7 @@ include("config.php");
 											while($row=mysqli_fetch_array($query))
 												{
 										?>
-                                    <h4 class="hover-text-primary text-capitalize"><a href="districtproperty.php?id=<?php echo $row['17']?>"><?php echo $row['city'];?></a></h4>
+                                    <h4 class="hover-text-primary text-capitalize"><a href="stateproperty.php?id=<?php echo $row['16']?>"><?php echo $row['city'];?></a></h4>
                                     <span><?php 
 												$total = $row[0];
 												echo $total;?> Properties Listed</span> </div>
@@ -393,7 +383,7 @@ include("config.php");
 											while($row=mysqli_fetch_array($query))
 												{
 										?>
-                                    <h4 class="hover-text-primary text-capitalize"><a href="districtproperty.php?id=<?php echo $row['17']?>"><?php echo $row['city'];?></a></h4>
+                                    <h4 class="hover-text-primary text-capitalize"><a href="stateproperty.php?id=<?php echo $row['16']?>"><?php echo $row['city'];?></a></h4>
                                     <span><?php 
 												$total = $row[0];
 												echo $total;?> Properties Listed</span> </div>
@@ -408,7 +398,7 @@ include("config.php");
 											while($row=mysqli_fetch_array($query))
 												{
 										?>
-                                    <h4 class="hover-text-primary text-capitalize"><a href="districtproperty.php?id=<?php echo $row['17']?>"><?php echo $row['city'];?></a></h4>
+                                    <h4 class="hover-text-primary text-capitalize"><a href="stateproperty.php?id=<?php echo $row['17']?>"><?php echo $row['city'];?></a></h4>
                                     <span><?php 
 												$total = $row[0];
 												echo $total;?> Properties Listed</span> </div>
@@ -423,7 +413,7 @@ include("config.php");
 											while($row=mysqli_fetch_array($query))
 												{
 										?>
-                                    <h4 class="hover-text-primary text-capitalize"><a href="districtproperty.php?id=<?php echo $row['17']?>"><?php echo $row['city'];?></a></h4>
+                                    <h4 class="hover-text-primary text-capitalize"><a href="stateproperty.php?id=<?php echo $row['2']?>"><?php echo $row['city'];?></a></h4>
                                     <span><?php 
 												$total = $row[0];
 												echo $total;?> Properties Listed</span> </div>
@@ -434,44 +424,7 @@ include("config.php");
                 </div>
             </div>
         </div>
-        <!--	Popular Places -->
-		
-		<!--	Testonomial -->
-		<div class="full-row">
-            <div class="container">
-                <div class="row">
-					<div class="col-lg-12">
-						<div class="content-sidebar p-4">
-							<div class="mb-3 col-lg-12">
-								<h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Testimonial</h4>
-									<div class="recent-review owl-carousel owl-dots-gray owl-dots-hover-primary">
-									
-										<?php
-													
-												$query=mysqli_query($con,"select feedback.*, user.* from feedback,user where feedback.uid=user.uid and feedback.status='1'");
-												while($row=mysqli_fetch_array($query))
-													{
-										?>
-										<div class="item">
-											<div class="p-4 bg-primary down-angle-white position-relative">
-												<p class="text-white"><i class="fas fa-quote-left mr-2 text-white"></i><?php echo $row['2']; ?>. <i class="fas fa-quote-right mr-2 text-white"></i></p>
-											</div>
-											<div class="p-2 mt-4">
-												<span class="text-primary d-table text-capitalize"><?php echo $row['uname']; ?></span> <span class="text-capitalize"><?php echo $row['utype']; ?></span>
-											</div>
-										</div>
-										<?php }  ?>
-										
-									</div>
-							</div>
-						 </div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--	Testonomial -->
-		
-		
+        <!--	Popular Places -->				
         <!--	Footer   start-->
 		<?php include("include/footer.php");?>
 		<!--	Footer   start-->

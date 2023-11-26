@@ -88,7 +88,7 @@ if(!isset($_SESSION['auser']))
                                                     <th>Name</th>
                                                     <th>Email</th>
                                                     <th>Phone</th>
-                                                    <th>Utype</th>
+                                                    <!-- <th>Utype</th> -->
 													<th>Image</th>
                                                     <th>Delete</th>
                                                 </tr>

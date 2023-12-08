@@ -101,7 +101,7 @@ if(!isset($_SESSION['auser']))
 									</div>
 									<div class="dash-widget-info">
 										
-									<h3><?php $sql = "SELECT * FROM user WHERE utype = 'agent'";
+									<h3><?php $sql = "SELECT * FROM agent_requests";
 										$query = $con->query($sql);
                 						echo "$query->num_rows";?></h3>
 										

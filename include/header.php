@@ -16,9 +16,10 @@
                                     <a href="logout.php">Logout</a>&nbsp;&nbsp;
                                 <?php } else { ?>
                                     <a href="login.php">Login</a>&nbsp;&nbsp;|
+                                    <a href="register.php"> Register</a></li>
                                 <?php } ?>
                             </li>
-                            <li><i class="fas fa-user-plus text-primary mr-1"></i><a href="register.php"> Register</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -95,6 +96,7 @@
                                 }
                             }
                             ?>
+                           
 
                         </div>
                     </nav>

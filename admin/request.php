@@ -101,14 +101,14 @@ if (!isset($_SESSION['auser'])) {
                                         while ($row = mysqli_fetch_assoc($result)) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $row['id']; ?></td>
+                                                <td><?php echo $row['uid']; ?></td>
                                                 <td><?php echo $row['uname']; ?></td>
                                                 <td><?php echo $row['uemail']; ?></td>
                                                 <td><?php echo $row['uphone']; ?></td>
                                                 <td><?php echo $row['utype']; ?></td>
                                                 <td>
-                                                    <a href='approve_request.php?id=<?php echo $row['id']; ?>' class='btn btn-success'>Approve</a>
-                                                    <a href='reject_request.php?id=<?php echo $row['id']; ?>' class='btn btn-danger'>Reject</a>
+                                                    <a href='approve_request.php?id=<?php echo $row['uid']; ?>' class='btn btn-success'>Approve</a>
+                                                    <a href='reject_request.php?id=<?php echo $row['uid']; ?>' class='btn btn-danger'>Reject</a>
                                                 </td>
                                             </tr>
                                         <?php

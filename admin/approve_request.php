@@ -9,7 +9,8 @@ if (isset($_GET['id'])) {
     $result = mysqli_query($con, $approveQuery);
 
     if ($result) {
-        echo "<p class='alert alert-success'>Registration request approved successfully.</p>";
+        // echo "<p class='alert alert-success'>Registration request approved successfully.</p>";
+        $msg = "<p class='alert alert-success'>Registration request approved successfully</p>";
     } else {
         echo "<p class='alert alert-warning'>Failed to approve registration request.</p>";
     }

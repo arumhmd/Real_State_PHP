@@ -8,8 +8,24 @@ if(!isset($_SESSION['uemail']))
 	header("location:login.php");
 }
 
-//// code insert
-//// add code
+// Assuming $_SESSION['uemail'] contains the logged-in user's email
+$loggedInUserEmail = $_SESSION['uemail'];
+
+// Query to get uid from agent table based on the logged-in user's email
+$query = "SELECT uid FROM agent_requests WHERE uemail = '$loggedInUserEmail'";
+$result = mysqli_query($con, $query);
+
+if ($result) {
+    $row = mysqli_fetch_assoc($result);
+    $agentUid = $row['uid'];
+
+    // Now, $agentUid contains the uid from the agent table for the logged-in user
+    // You can use $agentUid in your property insertion query or wherever needed
+} else {
+    // Handle the case when the query fails
+    $error = "<p class='alert alert-warning'>Error retrieving uid from agent table</p>";
+}
+
 $error="";
 $msg="";
 if(isset($_POST['add']))

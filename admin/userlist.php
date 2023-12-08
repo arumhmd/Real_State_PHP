@@ -100,17 +100,16 @@ if(!isset($_SESSION['auser']))
 													
 												$query=mysqli_query($con,"select * from user where utype='user'");
 												$cnt=1;
-												while($row=mysqli_fetch_row($query))
+												while($row=mysqli_fetch_assoc($query))
 													{
 											?>
                                                 <tr>
                                                     <td><?php echo $cnt; ?></td>
-                                                    <td><?php echo $row['1']; ?></td>
-                                                    <td><?php echo $row['2']; ?></td>
-                                                    <td><?php echo $row['3']; ?></td>
-                                                    <td><?php echo $row['5']; ?></td>
-													<td><img src="user/<?php echo $row['6']; ?>" height="50px" width="50px"></td>
-                                                    <td><a href="userdelete.php?id=<?php echo $row['0']; ?>">Delete</a></td>
+                                                    <td><?php echo $row['uname']; ?></td>
+                                                    <td><?php echo $row['uemail']; ?></td>
+                                                    <td><?php echo $row['uphone']; ?></td>
+													<td><img src="user/<?php echo $row['uimage']; ?>" height="50px" width="50px"></td>
+                                                    <td><a href="userdelete.php?id=<?php echo $row['uid']; ?>">Delete</a></td>
                                                 </tr>
                                                 <?php
 												$cnt=$cnt+1;

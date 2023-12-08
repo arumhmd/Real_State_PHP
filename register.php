@@ -53,7 +53,37 @@ if (isset($_REQUEST['reg'])) {
         }
     }
 }
+
+// Handle agent approval
+if (isset($_REQUEST['approve_agent'])) {
+    $agent_id = $_REQUEST['agent_id'];
+
+    // Retrieve agent details from agent_requests table
+    $agentRequestQuery = "SELECT * FROM agent_requests WHERE id='$agent_id'";
+    $agentRequestResult = mysqli_query($con, $agentRequestQuery);
+
+    if ($agentRequestResult && mysqli_num_rows($agentRequestResult) == 1) {
+        $agentData = mysqli_fetch_assoc($agentRequestResult);
+
+        // Move agent details to the user table
+        $sql = "INSERT INTO user (uname, uemail, uphone, upass, utype, uimage) VALUES ('{$agentData['uname']}','{$agentData['uemail']}','{$agentData['uphone']}','{$agentData['upass']}','{$agentData['utype']}','{$agentData['uimage']}')";
+        $result = mysqli_query($con, $sql);
+
+        if ($result) {
+            // Delete the agent registration request from agent_requests table
+            $deleteQuery = "DELETE FROM agent_requests WHERE id='$agent_id'";
+            mysqli_query($con, $deleteQuery);
+
+            $msg = "<p class='alert alert-success'>Agent approved and added to the user table</p>";
+        } else {
+            $error = "<p class='alert alert-warning'>Error approving agent</p>";
+        }
+    } else {
+        $error = "<p class='alert alert-warning'>Agent request not found</p>";
+    }
+}
 ?>
+
 
 
 <!DOCTYPE html>

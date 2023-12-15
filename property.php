@@ -60,7 +60,7 @@ include("config.php");
                         <div class="row">
 						
 							<?php 
-							$query=mysqli_query($con,"SELECT property.*, agent_requests.uname,agent_requests.utype,agent_requests.uimage FROM `property`,`agent_requests` WHERE property.uid=agent_requests.uid");
+							$query=mysqli_query($con,"SELECT property.*, agent_requests.uname,agent_requests.utype,agent_requests.uimage FROM `property`,`agent_requests` WHERE property.uid=agent_requests.id");
 								while($row=mysqli_fetch_array($query))
 								{
 							?>

@@ -1,7 +1,8 @@
 <?php
 session_start();
 require("config.php");
-
+$error = "";
+$msg = "";
 // Check if the admin is logged in (you should implement proper authentication)
 // For simplicity, this example assumes the admin is always logged in.
 $adminLoggedIn = true;
@@ -36,6 +37,13 @@ if (!isset($_SESSION['auser'])) {
     <link rel="stylesheet" href="assets/plugins/datatables/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="assets/plugins/datatables/select.bootstrap4.min.css">
     <link rel="stylesheet" href="assets/plugins/datatables/buttons.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-slider.css">
+<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="assets/css/layerslider.css">
+<link rel="stylesheet" type="text/css" href="assets/css/color.css">
+<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/fonts/flaticon/flaticon.css">
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -72,7 +80,9 @@ if (!isset($_SESSION['auser'])) {
                     </div>
                 </div>
                 <!-- /Page Header -->
-
+                <div>
+                <?php echo $error; ?><?php echo $msg; ?>
+                </div>
                 <!-- Pending Registration Requests -->
                 <div class="row">
                     <div class="col-sm-12">
@@ -101,15 +111,19 @@ if (!isset($_SESSION['auser'])) {
                                         while ($row = mysqli_fetch_assoc($result)) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $row['uid']; ?></td>
-                                                <td><?php echo $row['uname']; ?></td>
-                                                <td><?php echo $row['uemail']; ?></td>
-                                                <td><?php echo $row['uphone']; ?></td>
-                                                <td><?php echo $row['utype']; ?></td>
-                                                <td>
-                                                    <a href='approve_request.php?id=<?php echo $row['uid']; ?>' class='btn btn-success'>Approve</a>
-                                                    <a href='reject_request.php?id=<?php echo $row['uid']; ?>' class='btn btn-danger'>Reject</a>
-                                                </td>
+                                                <form action="approve_request.php" method="post">
+                                                    <td><?php echo $row['id']; ?></td>
+                                                    <td><?php echo $row['uname']; ?></td>
+                                                    <td><?php echo $row['uemail']; ?></td>
+                                                    <td><?php echo $row['uphone']; ?></td>
+                                                    <td><?php echo $row['utype']; ?></td>
+                                                    <td>
+                                                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                                        <button type="submit" name="add-btn" class='btn btn-success'>Approve</button>
+                                                        <!-- <a href='approve_request.php?id=<?php echo $row['id']; ?>' class='btn btn-success'>Approve</a> -->
+                                                        <a href='reject_request.php?id=<?php echo $row['id']; ?>' class='btn btn-danger'>Reject</a>
+                                                    </td>
+                                                </form>
                                             </tr>
                                         <?php
                                         }

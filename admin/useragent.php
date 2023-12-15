@@ -108,7 +108,7 @@ if(!isset($_SESSION['auser']))
                                                     <td><?php echo $row['uemail']; ?></td>
                                                     <td><?php echo $row['uphone']; ?></td>
 													<td><img src="user/<?php echo $row['uimage']; ?>" height="50px" width="50px"></td>
-                                                    <td><a href="useragentdelete.php?id=<?php echo $row['uid']; ?>">Delete</a></td>
+                                                    <td><a href="useragentdelete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
                                                 </tr>
                                                 <?php
 												$cnt=$cnt+1;

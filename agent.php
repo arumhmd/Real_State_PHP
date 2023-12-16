@@ -57,13 +57,13 @@ include("config.php");
                     </div>
                     <div class="row">
                         <?php
-                        $query = mysqli_query($con, "SELECT * FROM user WHERE utype='agent'");
+                        $query = mysqli_query($con, "SELECT * FROM agent_requests WHERE utype='agent'");
                         while ($row = mysqli_fetch_array($query)) {
                         ?>
 
                             <div class="col-md-6 col-lg-4">
                                 <div class="hover-zoomer bg-white shadow-one mb-4">
-                                    <div class="overflow-hidden"> <img src="admin/user/<?php echo $row['6']; ?>" alt="aimage"> </div>
+                                    <div class="overflow-hidden"> <img src="admin/user/<?php echo $row['6']; ?>" alt="uimage"> </div>
                                     <div class="py-3 text-center">
                                         <h5 class="text-secondary hover-text-success"><?php echo $row['1']; ?></h5>
                                         <span>Real Estate - Agent</span>

@@ -161,8 +161,8 @@ include("config.php");
                                 <div class="row">
 								
 									<?php 
-                                    echo $_SESSION['uid'];
-                                     $query=mysqli_query($con,"SELECT property.*, agent_requests.uname,agent_requests.utype,agent_requests.uimage FROM `property`,`agent_requests` WHERE property.uid=agent_requests.uid ORDER BY date DESC LIMIT 9");
+                                    // echo $_SESSION['uid'];
+                                     $query=mysqli_query($con,"SELECT property.*, agent_requests.uname,agent_requests.utype,agent_requests.uimage FROM `property`,`agent_requests` WHERE property.uid=agent_requests.id ORDER BY date DESC LIMIT 9");
 										while($row=mysqli_fetch_array($query))
 										{
 									?>

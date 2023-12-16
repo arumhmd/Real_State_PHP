@@ -17,7 +17,7 @@ if (isset($_REQUEST['login'])) {
 
         if ($agentRequestRow) {
             // Agent is approved, proceed with login
-            $_SESSION['uid'] = $agentRequestRow['uid']; // Assuming 'uid' is the primary key in the agent_requests table
+            $_SESSION['uid'] = $agentRequestRow['id']; // Assuming 'uid' is the primary key in the agent_requests table
             $_SESSION['uemail'] = $email;
             header("location:index.php");
         } else {

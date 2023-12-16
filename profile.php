@@ -134,7 +134,10 @@ if(isset($_POST['insert']))
                             <div class="col-lg-5 col-md-12">
 								<?php 
 									$uid=$_SESSION['uid'];
-									$query=mysqli_query($con,"SELECT * FROM `user` WHERE uid='$uid'");
+                                    $query = mysqli_query($con, "SELECT * FROM `user` 
+                             LEFT JOIN `agent_requests` ON user.uid = agent_requests.id 
+                             WHERE user.uid = '$uid' OR agent_requests.id = '$uid'");
+
 									while($row=mysqli_fetch_array($query))
 									{
 								?>

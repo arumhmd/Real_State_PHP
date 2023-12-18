@@ -12,12 +12,12 @@ if(!isset($_SESSION['uemail']))
 $loggedInUserEmail = $_SESSION['uemail'];
 
 // Query to get uid from agent table based on the logged-in user's email
-$query = "SELECT uid FROM agent_requests WHERE uemail = '$loggedInUserEmail'";
+$query = "SELECT id FROM agent_requests WHERE uemail = '$loggedInUserEmail'";
 $result = mysqli_query($con, $query);
 
 if ($result) {
     $row = mysqli_fetch_assoc($result);
-    $agentUid = $row['uid'];
+    $agentUid = $row['id'];
 
     // Now, $agentUid contains the uid from the agent table for the logged-in user
     // You can use $agentUid in your property insertion query or wherever needed

@@ -88,7 +88,7 @@ include("config.php");
 								$city=$_REQUEST['city'];
                                // $ptype=$_REQUEST['ptype'];
 								
-								$sql="SELECT property.*, user.uname FROM `property`,`user` WHERE property.uid=user.uid   and stype='{$stype}' and city='{$city}'";
+								$sql="SELECT property.*, agent_requests.uname FROM `property`,`agent_requests` WHERE property.uid=agent_requests.id   and stype='{$stype}' and city='{$city}'";
 								$result=mysqli_query($con,$sql);
 							
 								if(mysqli_num_rows($result)>0)

@@ -191,7 +191,7 @@ if (!isset($_SESSION['uemail'])) {
                                             
                                         </div>
                                     </div>
-                                    <div class="col-md-12 col-lg-12">
+                                    <!-- <div class="col-md-12 col-lg-12">
                                         <form class="bg-gray-form mt-5" action="#" method="post">
                                             <div class="row">
                                                 <div class="col-md-5">
@@ -227,7 +227,7 @@ if (!isset($_SESSION['uemail'])) {
                                                 </div>
                                             </div>
                                         </form>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -236,7 +236,7 @@ if (!isset($_SESSION['uemail'])) {
 					<?php } ?>
 					
                     <div class="col-lg-4">
-                        <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-md-50">Send Message</h4>
+                        <!-- <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-md-50">Send Message</h4>
                         <form method="post" action="#">
                             <div class="row">
                                 <div class="col-md-12">
@@ -266,7 +266,7 @@ if (!isset($_SESSION['uemail'])) {
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </form> -->
                         <h4 class="double-down-line-left text-secondary position-relative pb-4 my-4">Instalment Calculator</h4>
                         <form class="d-inline-block w-100" action="calc.php" method="post">
                             <label class="sr-only">Property Amount</label>

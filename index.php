@@ -293,7 +293,7 @@ include("config.php");
                     <div class="col-md-3">
                             <div class="count wow text-center  mb-sm-50" data-wow-duration="300ms"> <i class="flaticon-man flat-large text-white" aria-hidden="true"></i>
                                 <?php
-										$query=mysqli_query($con,"SELECT count(uid) FROM user WHERE utype = 'agent'");
+										$query=mysqli_query($con,"SELECT count(id) FROM agent_requests WHERE status = 'approved'");
 											while($row=mysqli_fetch_array($query))
 												{
 										?>

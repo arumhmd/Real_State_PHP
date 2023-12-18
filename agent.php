@@ -57,7 +57,7 @@ include("config.php");
                     </div>
                     <div class="row">
                         <?php
-                        $query = mysqli_query($con, "SELECT * FROM agent_requests WHERE utype='agent'");
+                        $query = mysqli_query($con, "SELECT * FROM agent_requests WHERE utype='agent' && status='approved'");
                         while ($row = mysqli_fetch_array($query)) {
                         ?>
 

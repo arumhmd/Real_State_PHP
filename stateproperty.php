@@ -81,7 +81,7 @@ include("config.php");
 							<?php 
 							
 								$city=$_REQUEST['id'];
-								$query=mysqli_query($con,"SELECT property.*, user.uname,user.utype,user.uimage FROM `property`,`user` WHERE property.uid=user.uid and city='$city'");
+								$query=mysqli_query($con,"SELECT property.*, agent_requests.uname,agent_requests.utype,agent_requests.uimage FROM `property`,`agent_requests` WHERE property.uid=agent_requests.id and city='$city'");
 								while($row=mysqli_fetch_array($query))
 								{
 							?>

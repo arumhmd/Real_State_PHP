@@ -79,10 +79,10 @@
 									</div>
 								</form>
 								
-								<div class="login-or">
+								<!-- <div class="login-or">
 									<span class="or-line"></span>
 									<span class="span-or">or</span>
-								</div>
+								</div> -->
 								
 								<!-- Social Login -->
 								<!-- <div class="social-login">
@@ -94,7 +94,7 @@
 								</div> -->
 								<!-- /Social Login -->
 								
-								<div class="text-center dont-have">Don't have an account? <a href="register.php">Register</a></div>
+								<!-- <div class="text-center dont-have">Don't have an account? <a href="register.php">Register</a></div> -->
 								
 							</div>
                         </div>

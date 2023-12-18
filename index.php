@@ -363,7 +363,7 @@ include("config.php");
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-md-6 col-lg-3 pb-1">
-                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9"> <img src="images/thumbnail4/1.jpg" alt="">
+                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9"> <img src="images/thumbnail4/1.png" alt="">
                                 <div class="text-white xy-center z-index-9 position-absolute text-center w-100">
 									<?php
 										$query=mysqli_query($con,"SELECT count(city), property.* FROM property where city='oddamavady'");
@@ -378,7 +378,7 @@ include("config.php");
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3 pb-1">
-                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9"> <img src="images/thumbnail4/2.jpg" alt="">
+                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9"> <img src="images/thumbnail4/2023-09-10.jpg" alt="">
                                 <div class="text-white xy-center z-index-9 position-absolute text-center w-100">
 									<?php
 										$query=mysqli_query($con,"SELECT count(city), property.* FROM property where city='eravur'");
@@ -393,7 +393,7 @@ include("config.php");
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3 pb-1">
-                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9"> <img src="images/thumbnail4/3.jpg" alt="">
+                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9 w-100 h-45"> <img src="images/thumbnail4/187_Batticaloa-gate.jpg" alt="">
                                 <div class="text-white xy-center z-index-9 position-absolute text-center w-100">
                                     <?php
 										$query=mysqli_query($con,"SELECT count(city), property.* FROM property where city='batticaloa'");
@@ -408,7 +408,7 @@ include("config.php");
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-3 pb-1">
-                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9"> <img src="images/thumbnail4/4.jpg" alt="">
+                            <div class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9"> <img src="images/thumbnail4/photocast.jpg" alt="">
                                 <div class="text-white xy-center z-index-9 position-absolute text-center w-100">
                                     <?php
 										$query=mysqli_query($con,"SELECT count(city), property.* FROM property where city='kattankudy'");

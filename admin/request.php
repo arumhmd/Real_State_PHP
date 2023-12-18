@@ -121,7 +121,7 @@ if (!isset($_SESSION['auser'])) {
                                                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                                         <button type="submit" name="add-btn" class='btn btn-success'>Approve</button>
                                                         <!-- <a href='approve_request.php?id=<?php echo $row['id']; ?>' class='btn btn-success'>Approve</a> -->
-                                                        <a href='reject_request.php?id=<?php echo $row['id']; ?>' class='btn btn-danger'>Reject</a>
+                                                        <button type="submit" name="reject-btn" class='btn btn-danger'>Reject</button>
                                                     </td>
                                                 </form>
                                             </tr>

@@ -4,6 +4,9 @@ session_cache_limiter(false);
 session_start();
 include("config.php");
 
+$city = "SELECT * FROM city";
+$result = $con->query($city);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,11 +83,15 @@ include("config.php");
                                         <div class="col-md-8 col-lg-6">
                                             <div class="form-group">
                                                 <select class="form-control" required name="city">
-                                                    <option value="">Select City</option>
-                                                    <option value="kattankudy">Kattankudy</option>
-                                                    <option value="batticaloa">Batticaloa</option>
-                                                    <option value="eravur">Eravur</option>
-                                                    <option value="oddamavady">Oddamavady</option>
+                                                    <option selected disabled>Select City</option>
+                                                    <?php
+                                                    // Display categories in the dropdown
+                                                    if ($result->num_rows > 0) {
+                                                        while ($city = $result->fetch_assoc()) {
+                                                            echo '<option value="' . $city['id'] . '">' . $city['cname'] . '</option>';
+                                                        }
+                                                    }
+                                                    ?>
                                                 </select>
                                             </div>
                                         </div>

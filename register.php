@@ -14,11 +14,11 @@ if (isset($_REQUEST['reg'])) {
     $temp_name1 = $_FILES['uimage']['tmp_name'];
     $pass = sha1($pass);
 
-    $query = "SELECT * FROM user WHERE uemail='$email' OR uemail IN (SELECT uemail FROM agent_requests WHERE status='approved')";
+    $query = "SELECT * FROM user WHERE uemail='$email' OR uemail IN (SELECT uemail FROM agent_requests)";
     $res = mysqli_query($con, $query);
     $num = mysqli_num_rows($res);
 
-    if ($num == 1) {
+    if ($num >= 0) {
         $error = "<p class='alert alert-warning'>Email Id already exists</p>";
     } else {
         if (!empty($name) && !empty($email) && !empty($phone) && !empty($pass) && !empty($uimage)) {

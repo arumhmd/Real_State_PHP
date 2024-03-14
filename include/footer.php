@@ -6,8 +6,8 @@
                             <div class="row">
                                 <div class="col-md-12 col-lg-3">
                                     <div class="footer-widget mb-4">
-                                        <div class="footer-logo mb-4"> <a href="#"><img class="logo-bottom" src="images/logo/logo-white.png" alt="image"></a> </div>
-                                        <p class="pb-20 text-white">Real</p>
+                                        <div class="footer-logo mb-4"> <a href="#"><img class="logo-bottom" src="images/logo/image.png" alt="image"></a> </div>
+                                        <p class="pb-20 text-white"></p>
                                         </div>
                                 </div>
                                 <div class="col-md-12 col-lg-8">
@@ -17,7 +17,7 @@
                                                 <h4 class="widget-title text-white double-down-line-left position-relative">Support</h4>
                                                 <ul class="hover-text-primary">
                                                     <li><a href="terms.php" class="text-white">Terms and Condition</a></li>
-                                                    <li><a href="faq.php" class="text-white">Frequenlty Asked Question</a></li>
+                                                    <!-- <li><a href="faq.php" class="text-white">Frequenlty Asked Question</a></li> -->
                                                     <li><a href="contact.php" class="text-white">Contact</a></li>
                                                 </ul>
                                             </div>

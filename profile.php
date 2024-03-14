@@ -147,10 +147,10 @@ if(isset($_POST['insert']))
                                     </div>
 									
                                     <div class="font-18">
-                                        <div class="mb-1 text-capitalize"><b>Name:</b> <?php echo $row['uname'];?></div>
-                                        <div class="mb-1 text-capitalize"><b>Email:</b> <?php echo $row['uemail'];?></div>
-                                        <div class="mb-1 text-capitalize"><b>Phone:</b> <?php echo $row['uphone'];?></div>
-										<div class="mb-1 text-capitalize"><b>Role:</b> <?php echo $row['utype'];?></div>
+                                        <div class="mb-1 text-capitalize"><b>Name:</b> <?php echo $row['1'];?></div>
+                                        <div class="mb-1 text-capitalize"><b>Email:</b> <?php echo $row['2'];?></div>
+                                        <div class="mb-1 text-capitalize"><b>Phone:</b> <?php echo $row['3'];?></div>
+										<div class="mb-1 text-capitalize"><b>Role:</b> <?php echo $row['5'];?></div>
                                     </div>
 									<?php } ?>
                                 </div>

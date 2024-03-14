@@ -10,6 +10,8 @@ if (isset($_GET['id'])) {
 
     if ($result) {
         echo "<p class='alert alert-success'>Agent request rejected successfully.</p>";
+        header('Location: request.php');
+
     } else {
         echo "<p class='alert alert-warning'>Failed to reject Agent request.</p>";
     }

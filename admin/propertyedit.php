@@ -218,6 +218,7 @@ if(isset($_POST['add']))
 													<div class="col-lg-9">
 														<select class="form-control" required name="bhk">
 															<option value="">Select BHK</option>
+															<option value="0 BHK">None</option>
 															<option value="1 BHK">1 BHK</option>
 															<option value="2,2 BHK">2,2 BHK</option>
 															<option value="2,3 BHK">2,3 BHK</option>
@@ -255,6 +256,7 @@ if(isset($_POST['add']))
 													<div class="col-lg-9">
 														<select class="form-control" required name="floor">
 															<option value="">Select Floor</option>
+															<option value="none">None</option>
 															<option value="1st Floor">1st Floor</option>
 															<option value="2nd Floor">2nd Floor</option>
 															<option value="3rd Floor">3rd Floor</option>

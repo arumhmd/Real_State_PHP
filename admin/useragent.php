@@ -97,7 +97,7 @@ if(!isset($_SESSION['auser']))
                                             <tbody>
 											<?php
 													
-												$query=mysqli_query($con,"select * from agent_requests");
+												$query=mysqli_query($con,"select * from agent_requests WHERE status='approved'");
 												$cnt=1;
 												while($row=mysqli_fetch_assoc($query))
 													{

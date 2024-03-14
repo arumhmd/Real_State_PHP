@@ -4,9 +4,6 @@ session_cache_limiter(false);
 session_start();
 include("config.php");
 
-$city = "SELECT * FROM city";
-$result = $con->query($city);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,15 +80,20 @@ $result = $con->query($city);
                                         <div class="col-md-8 col-lg-6">
                                             <div class="form-group">
                                                 <select class="form-control" required name="city">
-                                                    <option selected disabled>Select City</option>
-                                                    <?php
-                                                    // Display categories in the dropdown
-                                                    if ($result->num_rows > 0) {
-                                                        while ($city = $result->fetch_assoc()) {
-                                                            echo '<option value="' . $city['id'] . '">' . $city['cname'] . '</option>';
-                                                        }
-                                                    }
-                                                    ?>
+
+                                                    <!-- <?php
+                                                            $query1 = mysqli_query($con, "select * from city");
+                                                            while ($row1 = mysqli_fetch_row($query1)) {
+                                                            ?>
+                                                        <option value="<?php echo $row1[0]; ?>" class="text-captalize"><?php echo $row1[1]; ?></option>
+                                                    <?php } ?> -->
+
+
+                                                    <option value="">Select City</option>
+                                                    <option value="kattankudy">Kattankudy</option>
+                                                    <option value="batticaloa">Batticaloa</option>
+                                                    <option value="eravur">Eravur</option>
+                                                    <option value="oddamavady">Oddamavady</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -181,9 +183,20 @@ $result = $con->query($city);
                                                         <div class="featured bg-success text-white">New</div>
                                                         <div class="sale bg-success text-white text-capitalize">For <?php echo $row['5']; ?></div>
                                                         <div class="price text-primary"><b>RS.<?php echo $row['13']; ?> </b><span class="text-white"><?php echo $row['12']; ?> Sqft</span></div>
+                                                        <div class="sale bg-success text-white text-capitalize"> <?php echo $row['24']; ?></div>
                                                     </div>
                                                     <div class="featured-thumb-data shadow-one">
                                                         <div class="p-3">
+                                                            <?php
+                                                            if ($row['24'] == 'sold out') {
+                                                                echo '<div class="sale mr-3 mt-5 bg-danger text-white text-capitalize">' . $row['24'] . '</div>';
+                                                            } else {
+                                                                echo '<div class="sale mr-3 mt-5 bg-info text-white text-capitalize">' . $row['24'] . '</div>';
+                                                            }
+                                                            ?>
+
+                                                            <!-- <div class="sale mr-3 mt-5 bg-info text-white text-capitalize"> <?php echo $row['24']; ?></div> -->
+
                                                             <h5 class="text-secondary hover-text-success mb-2 text-capitalize"><a href="propertydetail.php?pid=<?php echo $row['0']; ?>"><?php echo $row['1']; ?></a></h5>
                                                             <span class="location text-capitalize"><i class="fas fa-map-marker-alt text-success"></i> <?php echo $row['14']; ?></span>
                                                         </div>
@@ -420,7 +433,7 @@ $result = $con->query($city);
                                         $query = mysqli_query($con, "SELECT count(city), property.* FROM property where city='kattankudy'");
                                         while ($row = mysqli_fetch_array($query)) {
                                         ?>
-                                            <h4 class="hover-text-primary text-capitalize"><a href="stateproperty.php?id=<?php echo $row['2'] ?>"><?php echo $row['city']; ?></a></h4>
+                                            <h4 class="hover-text-primary text-capitalize"><a href="stateproperty.php?id=<?php echo $row['16'] ?>"><?php echo $row['city']; ?></a></h4>
                                             <span><?php
                                                     $total = $row[0];
                                                     echo $total; ?> Properties Listed</span>

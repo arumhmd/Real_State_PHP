@@ -13,7 +13,7 @@ if(!isset($_SESSION['auser']))
 				<!-- Logo -->
                 <div class="header-left">
                     <a href="dashboard.php" class="logo">
-						<img src="assets/img/logo.png" alt="Logo">
+						<img src="assets/img/logo3.png" alt="Logo">
 					</a>
 					<a href="dashboard.php" class="logo logo-small">
 						<img src="assets/img/logo-small.png" alt="Logo" width="30" height="30">
@@ -101,7 +101,7 @@ if(!isset($_SESSION['auser']))
 							<li class="submenu">
 								<a href="#"><i class="fe fe-user"></i> <span> Users </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="adminlist.php"> Admin </a></li>
+									<!-- <li><a href="adminlist.php"> Admin </a></li> -->
 									<li><a href="userlist.php"> Users </a></li>
 									<li><a href="useragent.php"> Agent </a></li>
 									<!-- <li><a href="userbuilder.php"> Builder </a></li> -->

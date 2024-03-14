@@ -66,6 +66,7 @@ include("config.php");
                                     <div class="overflow-hidden"> <img src="admin/user/<?php echo $row['6']; ?>" alt="uimage"> </div>
                                     <div class="py-3 text-center">
                                         <h5 class="text-secondary hover-text-success"><?php echo $row['1']; ?></h5>
+                                        <h5 class="text-secondary hover-text-success"><?php echo $row['3']; ?></h5>
                                         <span>Real Estate - Agent</span>
                                     </div>
                                 </div>
